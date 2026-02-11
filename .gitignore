@@ -1,9 +1,37 @@
-models/
-data/
-outputs/
-*.pyc
+# .gitignore
+
+# Python
 __pycache__/
-.env
-*.log
-.vscode/
+*.py[cod]
+*$py.class
+*.so
+.Python
 venv/
+env/
+*.egg-info/
+
+# Data & Models (too large)
+data/
+models/
+outputs/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
