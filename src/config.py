@@ -17,7 +17,7 @@ class Config:
     HF_TOKEN = os.getenv("HF_TOKEN")
     
     # Model settings
-    BASE_MODEL = os.getenv("BASE_MODEL", "mistralai/Mistral-7B-Instruct-v0.2")
+    BASE_MODEL = os.getenv("BASE_MODEL", "microsoft/Phi-3-mini-4k-instruct")
     DEVICE = os.getenv("DEVICE", "cuda")
     MAX_LENGTH = int(os.getenv("MAX_LENGTH", 2048))
     
