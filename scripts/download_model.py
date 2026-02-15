@@ -22,8 +22,7 @@ def download_model():
         print("\n1️⃣ Downloading tokenizer...")
         tokenizer = AutoTokenizer.from_pretrained(
             Config.BASE_MODEL,
-            token=Config.HF_TOKEN,
-            trust_remote_code=True
+            token=Config.HF_TOKEN
         )
         tokenizer.save_pretrained(save_path)
         print("✅ Tokenizer downloaded")
@@ -34,8 +33,7 @@ def download_model():
             Config.BASE_MODEL,
             token=Config.HF_TOKEN,
             device_map="auto",
-            low_cpu_mem_usage=True,
-            trust_remote_code=True
+            low_cpu_mem_usage=True
         )
         model.save_pretrained(save_path)
         print("✅ Model downloaded")
@@ -44,6 +42,8 @@ def download_model():
         print(f"📂 Model saved at: {save_path}")
         
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"\n❌ Error downloading model: {e}")
         sys.exit(1)
 
